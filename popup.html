@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 320px;
+      background-color: #0f172a; /* 深蓝黑背景 */
+      color: #e2e8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 16px;
+      margin: 0;
+    }
+    h3 { margin-top: 0; color: #fbbf24; text-align: center; }
+    
+    .input-group { display: flex; gap: 8px; margin-bottom: 15px; }
+    input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: white;
+      outline: none;
+    }
+    input:focus { border-color: #fbbf24; }
+    
+    button {
+      padding: 8px 16px;
+      background: #fbbf24;
+      color: #0f172a;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    button:hover { background: #f59e0b; }
+    button:disabled { background: #475569; cursor: not-allowed; }
+
+    #settings-area { margin-bottom: 15px; display: none; border-bottom: 1px solid #334155; padding-bottom: 10px;}
+    .toggle-settings { font-size: 12px; color: #64748b; cursor: pointer; text-align: center; margin-top: 10px;}
+    .toggle-settings:hover { color: #fbbf24; }
+
+    /* 结果展示区 */
+    #result { margin-top: 10px; font-size: 13px; line-height: 1.5; }
+    .stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; border-bottom: 1px dashed #334155; padding-bottom: 4px; }
+    .label { color: #94a3b8; }
+    .value { color: #fff; font-weight: bold; }
+    .highlight { color: #fbbf24; }
+    
+    .loading { text-align: center; color: #94a3b8; display: none; }
+  </style>
+</head>
+<body>
+  <h3>🚀 空投预言机</h3>
+
+  <div id="settings-area">
+    <input type="password" id="api-key" placeholder="输入 Perplexity API Key">
+    <button id="save-key">保存</button>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="project-input" placeholder="输入项目名 (如 Monad)">
+    <button id="search-btn">查询</button>
+  </div>
+
+  <div id="loader" class="loading">正在联网搜索真实数据...</div>
+
+  <div id="result"></div>
+
+  <div class="toggle-settings" id="toggle-settings">⚙️ 设置 API Key</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "空投预言机",
+  "version": "1.0",
+  "description": "基于 AI 的加密项目融资与空投快速查询工具",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png",
+    "default_title": "点击查询空投"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.perplexity.ai/*"
+  ]
+}
